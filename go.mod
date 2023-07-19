@@ -1,4 +1,4 @@
-module kvstore
+module github.com/vittoriocapocasale/kvstore
 
 go 1.18
 
