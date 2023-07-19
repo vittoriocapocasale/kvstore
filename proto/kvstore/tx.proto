@@ -1,0 +1,42 @@
+syntax = "proto3";
+package kvstore.kvstore;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "kvstore/x/kvstore/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc WriteKey(MsgWriteKey) returns (MsgWriteKeyResponse);
+  rpc DeleteKey(MsgDeleteKey) returns (MsgDeleteKeyResponse);
+  rpc ReadKey(MsgReadKey) returns (MsgReadKeyResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgWriteKey {
+  string creator = 1;
+  string key = 2;
+  string value = 3;
+}
+
+message MsgWriteKeyResponse {
+}
+
+message MsgDeleteKey {
+  string creator = 1;
+  string key = 2;
+}
+
+message MsgDeleteKeyResponse {
+}
+
+message MsgReadKey {
+  string creator = 1;
+  string key = 2;
+}
+
+message MsgReadKeyResponse {
+  string value = 1;
+}
+
+// this line is used by starport scaffolding # proto/tx/message
